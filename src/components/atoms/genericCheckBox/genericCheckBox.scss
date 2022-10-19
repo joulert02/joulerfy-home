@@ -1,0 +1,85 @@
+@import "../../../_shared/variables.scss";
+@import "../../../_shared/mixins.scss";
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-end;
+  color: $gray;
+  height: 30px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 10px 0;
+  left: 0;
+
+  input[type="checkbox"].css-checkbox {
+    clip: rect(0 0 0 0);
+    width: 0px;
+    height: 0px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: absolute;
+    overflow: hidden;
+
+    &:checked + :before {
+      content: "\2714";
+      background: $green-primary;
+      color: $white;
+    }
+  }
+
+  label.css-label {
+    padding-left: 27px;
+    height: fit-content;
+    cursor: pointer;
+    position: relative;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:active:before {
+      animation: check-animation 600ms;
+    }
+
+    &:before {
+      content: "";
+      width: 23px;
+      height: 23px;
+      bottom: 0px;
+      left: 0;
+      font-size: 1.2em;
+      border: 1px $green-primary solid;
+      border-radius: 10%;
+      position: absolute;
+      animation: check-animation-invert 600ms;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@keyframes check-animation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes check-animation-invert {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

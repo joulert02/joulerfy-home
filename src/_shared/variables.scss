@@ -1,0 +1,35 @@
+$colors: (
+  primary: #005dff,
+  primary-light: lighten(#005dff, 40%),
+  primary-dark: darken(#005dff, 40%),
+  secondary: #fff,
+  accent: #fff6bb,
+  primary-orange: #ec5923,
+  third: #265c7e
+);
+
+$green-primary: #1ed760;
+$green-dark: #1db954;
+$dark: #000;
+$light-dark: #333;
+$white: #fff;
+$dark-white: #e6e6e6;
+$gray: #616467;
+$light-gray: #adadad;
+$red : red;
+
+$padding: 15px;
+$borders: 15px;
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$desktop: 840px;
+$max-width-mobile: 350px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

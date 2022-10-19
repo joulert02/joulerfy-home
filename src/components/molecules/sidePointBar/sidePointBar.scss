@@ -1,0 +1,17 @@
+.sidePoints {
+  height: 100%;
+  width: 20%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .info-container {
+    cursor: pointer;
+    padding: 0.5em;
+    background-color: purple;
+    margin: 5px;
+    &.active {
+      background-color: blue;
+    }
+  }
+}

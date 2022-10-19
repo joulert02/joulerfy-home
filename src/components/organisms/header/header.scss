@@ -1,0 +1,27 @@
+@import "../../../_shared/variables.scss";
+@import "../../../_shared/mixins.scss";
+
+header {
+  position: relative;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a.header-logo {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: $padding;
+    font-size: 1.25em;
+    display: block;
+
+    @include desktop{
+      font-size: 2em;
+    }
+  }
+
+  p {
+    margin-right: 50px;
+  }
+}

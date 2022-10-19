@@ -1,0 +1,77 @@
+@import "../../../_shared/variables.scss";
+@import "../../../_shared/mixins.scss";
+
+.login-form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  margin-top: 5px;
+  @include desktop {
+    margin: 10px 0;
+  }
+
+  .input-container {
+    margin: 5px 0;
+    position: relative;
+    @include desktop {
+      margin: 7px 0;
+    }
+
+    .checkbox-container + label {
+      position: relative;
+      @include desktop {
+        position: absolute;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 15px 10px;
+      border: 1px $dark-white solid;
+      background-color: $white;
+      font-size: 16px;
+      color: $gray;
+
+      &:focus {
+        border-color: $light-gray;
+      }
+
+      &.password-input {
+        padding-right: 50px;
+      }
+
+      &::placeholder {
+        color: $light-gray;
+        opacity: 1; /* Firefox */
+      }
+    }
+    .icon-eye {
+      position: absolute;
+      font-size: 2em;
+      right: 0;
+      margin: 3px 10px;
+      cursor: pointer;
+      color: $light-gray;
+    }
+  }
+
+  .label-error {
+    color: $red;
+    font-size: 1em;
+    // word-wrap: none;
+  }
+
+  @include desktop {
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+
+      .send-button {
+        max-width: 300px;
+      }
+    }
+  }
+}

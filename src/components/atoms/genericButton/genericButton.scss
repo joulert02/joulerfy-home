@@ -1,0 +1,69 @@
+@import "../../../_shared/variables.scss";
+@import "../../../_shared/mixins.scss";
+
+.generic-button {
+  width: 100%;
+  min-width: 160px;
+  text-decoration: none;
+  padding: 18px 14px 18px;
+  font-size: 14px;
+  border: 0 transparent;
+  border-radius: 500px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  animation: letter-out 0.5s;
+  user-select: none;
+  -webkit-user-drag: none;
+
+  &:hover {
+    animation: letter-in 0.5s;
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+
+  &.green {
+    color: $white;
+    background-color: $green-primary;
+  }
+
+  &.black {
+    background-color: $dark;
+    color: $white;
+  }
+
+  &.white {
+    background-color: white;
+    box-shadow: inset 0 0 0 2px #616467;
+    color: $gray;
+    font-weight: bold;
+  }
+}
+
+@keyframes letter-in {
+  from {
+    letter-spacing: 2px;
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes letter-out {
+  from {
+    letter-spacing: 4px;
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+    letter-spacing: 2px;
+  }
+}
